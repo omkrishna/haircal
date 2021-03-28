@@ -54,6 +54,14 @@
   color: grey;
 }
 
+.label-large {
+  font-size: 16px;
+  line-height: 27px;
+  height: 27px;
+  width: 27px;
+  margin: 0 5px 0 0;
+}
+
 .Cu {
   background-color: #bfe5f4;
 }
@@ -72,8 +80,28 @@
   background-color: #f9e4e4;
 }
 
-.modal-picture {
-  height: 200px;
-  border-radius: 10px;
-  margin: 10px;
+.post-card {
+  margin: 0 20px;
+}
+
+.post-card-pic {
+  width: 96%;
+  border-radius: 10px 10px 0 0;
+}
+
+.post-card-body {
+  background-color: white;
+  width: 90%;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+}
+
+.post-card-date {
+  margin: 7px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.post-card-text {
+  font-size: 14px;
 }

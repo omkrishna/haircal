@@ -12,6 +12,8 @@
     "react-infinite-scroll-component": "^6.0.0",
     "react-modal": "^3.12.1",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

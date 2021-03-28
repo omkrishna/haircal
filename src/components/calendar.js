@@ -3,7 +3,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import moment from "moment";
 import Modal from "react-modal";
 import Post from "./post";
+import CenterMode from "./slick";
+import Slider from "react-slick";
 import "./style.css";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export class calendar extends Component {
   state = {
@@ -69,7 +74,7 @@ export class calendar extends Component {
               calendardatetime: {
                 // Date Time of a particular post
                 return: true, // please note: there can be multiple posts on a single day
-                sort: "descending", // you can sort fetched dates by ascending/descending.
+                sort: "ascending", // you can sort fetched dates by ascending/descending.
               },
               maxitemcount: "20", //you can ask between 1 to 50 posts (max) at a time.
               continuationtoken: null, //replace with the continuation token from response to get the next set
@@ -191,9 +196,22 @@ export class calendar extends Component {
   };
 
   render() {
+    const settings = {
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "60px",
+      slidesToShow: 1,
+      speed: 500,
+      initialSlide: 2,
+    };
     //console.log(this.state);
     const customStyles = {
       content: {
+        width: "100vw",
+        height: "70vh",
+        border: "0",
+        backgroundColor: "rgb(0,0,0,0.75)",
         top: "50%",
         left: "50%",
         right: "auto",
@@ -211,17 +229,13 @@ export class calendar extends Component {
           style={customStyles}
           contentLabel="Minimal Modal Example"
         >
-          <button onClick={this.handleCloseModal}>Close Modal</button>
           {this.state.currPost == null ? (
             <div></div>
           ) : (
             <div>
-              {this.state.currPost.rating}
-              <img
-                className="modal-picture"
-                src={this.state.currPost.media[0].mediaurl}
-                alt=""
-              />
+              <div>
+                <CenterMode initialSlide={1} allPosts={this.state.posts} />
+              </div>
             </div>
           )}
         </Modal>
